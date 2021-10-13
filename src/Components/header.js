@@ -1,12 +1,11 @@
 import React from "react";
 import "../App.css";
-import {format} from 'date-fns';
-
+import { format } from "date-fns";
 
 const Header = ({ date }) => {
   const monthNow = date.toLocaleString("ru", { month: "long" });
   const weekDay = date.toLocaleString("ru", { weekday: "long" });
-    console.log(format(new Date(), 'eeeeee'))
+  console.log(format(new Date(), " do MMMM", { locale: ru }));
   return (
     <div>
       <div className="ui-datepicker-material-header">
