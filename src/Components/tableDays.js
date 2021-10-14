@@ -1,16 +1,25 @@
 import React from "react";
 import "../App.css";
 import { format } from "date-fns";
-const TableDays = ({ allDaysOfMonth }) => {
-  const arrDays = Array.from(allDaysOfMonth);
-  const countWeek = [1, 2, 3, 4, 5];
+import cn from "classnames";
 
+const TableDays = ({ allDaysOfMonth }) => {
+  const countWeek = [1, 2, 3, 4, 5];
+  const arrDays = Array.from(allDaysOfMonth);
   return (
     <tbody>
       {countWeek.map((count) => (
         <tr key={count}>
-          {arrDays.splice(0, 7).map((elem) => (
-            <td key={elem}>{format(elem, "d")}</td>
+          {arrDays.splice(0, 7).map((day) => (
+            <td
+              key={day}
+              className={cn({
+                "ui-datepicker-today":
+                  format(day, "d") === format(new Date(), "d"),
+              })}
+            >
+              {format(day, "d")}
+            </td>
           ))}
         </tr>
       ))}
