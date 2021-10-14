@@ -1,27 +1,31 @@
 import React from "react";
 import "../App.css";
 import { format } from "date-fns";
+import { ru } from "date-fns/locale";
 
-const Header = ({ date }) => {
-  const monthNow = date.toLocaleString("ru", { month: "long" });
-  const weekDay = date.toLocaleString("ru", { weekday: "long" });
-  console.log(format(new Date(), " do MMMM", { locale: ru }));
+const Header = () => {
+  const formatDate = (check) => format(new Date(), check, { locale: ru });
+
+  console.log();
   return (
     <div>
       <div className="ui-datepicker-material-header">
-        <div className="ui-datepicker-material-day">{weekDay}</div>
+        <div className="ui-datepicker-material-day">{formatDate("EEEE")}</div>
         <div className="ui-datepicker-material-date">
-          <div className="ui-datepicker-material-day-num">{date.getDate()}</div>
-          <div className="ui-datepicker-material-month">{monthNow}</div>
-          <div className="ui-datepicker-material-year">
-            {date.getFullYear()}
+          <div className="ui-datepicker-material-day-num">
+            {formatDate("d")}
           </div>
+          <div className="ui-datepicker-material-month">
+            {formatDate("MMMM")}
+          </div>
+          <div className="ui-datepicker-material-year">{formatDate("Y")}</div>
         </div>
       </div>
       <div className="ui-datepicker-header">
         <div className="ui-datepicker-title">
-          <span className="ui-datepicker-month">{monthNow}</span>&nbsp;
-          <span className="ui-datepicker-year">{date.getFullYear()}</span>
+          <span className="ui-datepicker-month">{formatDate("LLLL")}</span>
+          &nbsp;
+          <span className="ui-datepicker-year">{formatDate("Y")}</span>
         </div>
       </div>
     </div>

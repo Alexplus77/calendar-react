@@ -2,12 +2,13 @@ import React from "react";
 import "./header";
 import "../App.css";
 import Header from "./header";
+import Tables from "./tables";
 
 const Calendar = () => {
-  const date = new Date();
   return (
     <div className="ui-datepicker">
-      <Header date={date} />
+      <Header />
+      <Tables />
     </div>
   );
 };
