@@ -14,7 +14,12 @@ const Tables = () => {
   const firstDay = startOfMonth(new Date());
   const countDays = format(firstDay, "i") - 1;
   const prevMonth = addDays(firstDay, -countDays);
-  const allDaysOfMonth = eachDayOfInterval({ start: prevMonth, end: lastDay });
+  const nextMonth = addDays(lastDay, countDays);
+
+  const allDaysOfMonth = eachDayOfInterval({
+    start: prevMonth,
+    end: nextMonth,
+  });
   console.log(prevMonth);
   const namesWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
