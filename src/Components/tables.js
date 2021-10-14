@@ -20,7 +20,7 @@ const Tables = () => {
     start: prevMonth,
     end: nextMonth,
   });
-  console.log(prevMonth);
+
   const namesWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
   return (
