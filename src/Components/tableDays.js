@@ -13,10 +13,16 @@ const TableDays = ({ allDaysOfMonth }) => {
           {arrDays.splice(0, 7).map((day) => (
             <td
               key={day}
-              className={cn({
-                "ui-datepicker-today":
-                  format(day, "d") === format(new Date(), "d"),
-              })}
+              className={cn(
+                {
+                  "ui-datepicker-today":
+                    format(day, "d") === format(new Date(), "d"),
+                },
+                {
+                  "ui-datepicker-other-month":
+                    format(day, "M") !== format(new Date(), "M"),
+                }
+              )}
             >
               {format(day, "d")}
             </td>

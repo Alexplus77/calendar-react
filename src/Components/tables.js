@@ -12,9 +12,9 @@ import { addDays } from "date-fns";
 const Tables = () => {
   const lastDay = lastDayOfMonth(new Date());
   const firstDay = startOfMonth(new Date());
-  const countDays = format(firstDay, "i") - 1;
-  const prevMonth = addDays(firstDay, -countDays);
-  const nextMonth = addDays(lastDay, countDays);
+
+  const prevMonth = addDays(firstDay, -format(firstDay, "i") + 1);
+  const nextMonth = addDays(lastDay, 7 - format(lastDay, "i"));
 
   const allDaysOfMonth = eachDayOfInterval({
     start: prevMonth,
