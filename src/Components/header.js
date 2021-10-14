@@ -5,8 +5,6 @@ import { ru } from "date-fns/locale";
 
 const Header = () => {
   const formatDate = (check) => format(new Date(), check, { locale: ru });
-
-  console.log();
   return (
     <div>
       <div className="ui-datepicker-material-header">
