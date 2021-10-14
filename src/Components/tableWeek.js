@@ -1,10 +1,16 @@
 import React from "react";
 import "../App.css";
 
-const TableWeek = () => {
+const TableWeek = ({ namesWeek }) => {
   return (
     <thead>
-      <tr></tr>
+      <tr>
+        {namesWeek.map((name) => (
+          <th key={name} scope="col">
+            {name}
+          </th>
+        ))}
+      </tr>
     </thead>
   );
 };
