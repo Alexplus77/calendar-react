@@ -6,12 +6,16 @@ import TableDays from "./tableDays";
 import { lastDayOfMonth } from "date-fns";
 import { startOfMonth } from "date-fns";
 import { eachDayOfInterval } from "date-fns";
+import { format } from "date-fns";
+import { addDays } from "date-fns";
 
 const Tables = () => {
   const lastDay = lastDayOfMonth(new Date());
   const firstDay = startOfMonth(new Date());
-  const allDaysOfMonth = eachDayOfInterval({ start: firstDay, end: lastDay });
-
+  const countDays = format(firstDay, "i") - 1;
+  const prevMonth = addDays(firstDay, -countDays);
+  const allDaysOfMonth = eachDayOfInterval({ start: prevMonth, end: lastDay });
+  console.log(prevMonth);
   const namesWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
   return (
