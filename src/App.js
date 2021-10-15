@@ -3,10 +3,6 @@ import "./App.css";
 import "./pages/Calendar-Page";
 import CalendarPage from "./pages/Calendar-Page";
 
-const App = () => (
-  <div>
-    <CalendarPage />
-  </div>
-);
+const App = () => <CalendarPage />;
 
 export default App;
