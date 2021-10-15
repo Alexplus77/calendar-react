@@ -15,7 +15,7 @@ import { namesWeek } from "../constants/constants";
 import { weekends } from "../constants/constants";
 
 const CalendarPage = () => {
-  const date = new Date(2020, 9 - 1, 18);
+  const date = new Date(); // add any date
   const lastDay = lastDayOfMonth(date);
   const firstDay = startOfMonth(date);
 
