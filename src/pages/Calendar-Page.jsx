@@ -18,7 +18,7 @@ const CalendarPage = () => {
   const lastDay = lastDayOfMonth(new Date());
   const firstDay = startOfMonth(new Date());
 
-  const prevMonth = addDays(firstDay, -format(firstDay, "i") + 1);
+  const prevMonth = addDays(firstDay, 1 - format(firstDay, "i"));
   const nextMonth = addDays(lastDay, 7 - format(lastDay, "i"));
 
   const allDaysOfMonth = eachDayOfInterval({
