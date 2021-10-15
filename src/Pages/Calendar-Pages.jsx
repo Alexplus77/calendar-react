@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
-import CalendarWeek from "./Calendar-Week";
-import CalendarDates from "./Calendar-Dates";
-import CalendarHeader from "./Calendar-Header";
+import CalendarWeek from "../Components/Calendar-Week";
+import CalendarDates from "../Components/Calendar-Dates";
+import CalendarHeader from "../Components/Calendar-Header";
 import { lastDayOfMonth } from "date-fns";
 import { startOfMonth } from "date-fns";
 import { eachDayOfInterval } from "date-fns";
