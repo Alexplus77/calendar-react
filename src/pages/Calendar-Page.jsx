@@ -15,7 +15,7 @@ import { namesWeek } from "../constants/constants";
 import { weekends } from "../constants/constants";
 
 const CalendarPage = () => {
-  const date = new Date(2021, 10, 15);
+  const date = new Date(2022, 11 - 1, 15);
   const lastDay = lastDayOfMonth(date);
   const firstDay = startOfMonth(date);
 
