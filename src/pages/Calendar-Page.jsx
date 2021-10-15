@@ -15,7 +15,7 @@ import { namesWeek } from "../constants/constants";
 import { weekends } from "../constants/constants";
 
 const CalendarPage = () => {
-  const date = new Date(); // add any date: new Date(year, month, day)
+  const date = new Date(); // add any date: new Date(year, month-1, day)
   const lastDay = lastDayOfMonth(date);
   const firstDay = startOfMonth(date);
 
