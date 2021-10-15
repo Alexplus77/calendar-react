@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import "./Components/calendar";
-import Calendar from "./Components/calendar";
+import "./Pages/Calendar-Pages";
+import CalendarPages from "./Pages/Calendar-Pages";
 
 const App = () => (
   <div>
-    <Calendar />
+    <CalendarPages />
   </div>
 );
 

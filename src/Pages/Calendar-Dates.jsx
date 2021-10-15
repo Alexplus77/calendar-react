@@ -3,9 +3,8 @@ import "../App.css";
 import { format } from "date-fns";
 import cn from "classnames";
 
-const TableDays = ({ allDaysOfMonth }) => {
-  const countWeek = [1, 2, 3, 4, 5];
-  const arrDays = Array.from(allDaysOfMonth);
+const CalendarDates = ({ allDaysOfMonth, countWeek }) => {
+  const arrDays = [...allDaysOfMonth];
   return (
     <tbody>
       {countWeek.map((count) => (
@@ -33,4 +32,4 @@ const TableDays = ({ allDaysOfMonth }) => {
   );
 };
 
-export default TableDays;
+export default CalendarDates;

@@ -1,7 +1,7 @@
 Календарь [DEMO](https://alexplus77.github.io/calendar-react/)
 ===
 
-Создать React-компонет `Calendar` (функциональный компонент), который бы показывал текущую дату,
+Создать React-компонет `CalendarPages` (функциональный компонент), который бы показывал текущую дату,
 и текущий месяц как показано на картинке:
 ![Внешний вид компонента](src/assets/preview.png)
 
@@ -12,7 +12,7 @@ const now = new Date(2017, 2, 8);
 
 // внутри компонента App:
 return (
-  <Calendar date={now} />
+  <CalendarPages date={now} />
 );
 ```
 

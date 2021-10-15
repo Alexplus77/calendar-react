@@ -1,10 +1,7 @@
 import React from "react";
 import "../App.css";
-import { format } from "date-fns";
-import { ru } from "date-fns/locale";
 
-const Header = () => {
-  const formatDate = (check) => format(new Date(), check, { locale: ru });
+const CalendarHeader = ({ formatDate }) => {
   return (
     <div>
       <div className="ui-datepicker-material-header">
@@ -29,4 +26,4 @@ const Header = () => {
     </div>
   );
 };
-export default Header;
+export default CalendarHeader;

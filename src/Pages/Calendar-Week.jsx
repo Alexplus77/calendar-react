@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-const TableWeek = ({ namesWeek }) => {
+const CalendarWeek = ({ namesWeek }) => {
   return (
     <thead>
       <tr>
@@ -15,4 +15,4 @@ const TableWeek = ({ namesWeek }) => {
   );
 };
 
-export default TableWeek;
+export default CalendarWeek;
