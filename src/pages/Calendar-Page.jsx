@@ -15,8 +15,9 @@ import { namesWeek } from "../constants/constants";
 import { weekends } from "../constants/constants";
 
 const CalendarPage = () => {
-  const lastDay = lastDayOfMonth(new Date());
-  const firstDay = startOfMonth(new Date());
+  const date = new Date(2021, 10, 15);
+  const lastDay = lastDayOfMonth(date);
+  const firstDay = startOfMonth(date);
 
   const prevMonth = addDays(firstDay, 1 - format(firstDay, "i"));
   const nextMonth = addDays(lastDay, 7 - format(lastDay, "i"));
@@ -25,7 +26,7 @@ const CalendarPage = () => {
     start: prevMonth,
     end: nextMonth,
   });
-  const formatDate = (check) => format(new Date(), check, { locale: ru });
+  const formatDate = (check) => format(date, check, { locale: ru });
   return (
     <div className="ui-datepicker">
       <CalendarHeader formatDate={formatDate} />
@@ -41,7 +42,11 @@ const CalendarPage = () => {
           ))}
         </colgroup>
         <CalendarWeek namesWeek={namesWeek} />
-        <CalendarDates allDaysOfMonth={allDaysOfMonth} countWeek={countWeek} />
+        <CalendarDates
+          allDaysOfMonth={allDaysOfMonth}
+          countWeek={countWeek}
+          date={date}
+        />
       </table>
     </div>
   );

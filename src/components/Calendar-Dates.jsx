@@ -3,7 +3,7 @@ import "../App.css";
 import { format } from "date-fns";
 import cn from "classnames";
 
-const CalendarDates = ({ allDaysOfMonth, countWeek }) => {
+const CalendarDates = ({ allDaysOfMonth, countWeek, date }) => {
   const arrDays = [...allDaysOfMonth];
   return (
     <tbody>
@@ -13,10 +13,9 @@ const CalendarDates = ({ allDaysOfMonth, countWeek }) => {
             <td
               key={day}
               className={cn({
-                "ui-datepicker-today":
-                  format(day, "d") === format(new Date(), "d"),
+                "ui-datepicker-today": format(day, "d") === format(date, "d"),
                 "ui-datepicker-other-month":
-                  format(day, "M") !== format(new Date(), "M"),
+                  format(day, "M") !== format(date, "M"),
               })}
             >
               {format(day, "d")}
