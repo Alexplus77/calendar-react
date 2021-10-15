@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
-import CalendarWeek from "../Components/Calendar-Week";
-import CalendarDates from "../Components/Calendar-Dates";
-import CalendarHeader from "../Components/Calendar-Header";
+import CalendarWeek from "../components/Calendar-Week";
+import CalendarDates from "../components/Calendar-Dates";
+import CalendarHeader from "../components/Calendar-Header";
 import { lastDayOfMonth } from "date-fns";
 import { startOfMonth } from "date-fns";
 import { eachDayOfInterval } from "date-fns";
@@ -10,10 +10,11 @@ import { format } from "date-fns";
 import { addDays } from "date-fns";
 import { ru } from "date-fns/locale";
 import cn from "classnames";
-import { countWeek } from "../Contants/constants";
-import { namesWeek } from "../Contants/constants";
+import { countWeek } from "../constants/constants";
+import { namesWeek } from "../constants/constants";
+import { weekends } from "../constants/constants";
 
-const CalendarPages = () => {
+const CalendarPage = () => {
   const lastDay = lastDayOfMonth(new Date());
   const firstDay = startOfMonth(new Date());
 
@@ -33,7 +34,7 @@ const CalendarPages = () => {
           {namesWeek.map((name) => (
             <col
               className={cn({
-                "ui-datepicker-week-end": name === "Сб" || name === "Вс",
+                "ui-datepicker-week-end": weekends.includes(name),
               })}
               key={name}
             />
@@ -46,4 +47,4 @@ const CalendarPages = () => {
   );
 };
 
-export default CalendarPages;
+export default CalendarPage;
